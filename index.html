@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestra historia de amor 💗</title>
+<title>Dariel & Tokischa 💗</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -16,25 +18,105 @@ body {
   text-align: center;
 }
 
-section { padding: 48px 20px; }
+section {
+  padding: 48px 20px;
+}
 
-h1, h2 { color: #b54d91; }
+h1, h2 {
+  color: #b54d91;
+}
 
 p {
   font-size: 17px;
   line-height: 1.8;
 }
 
+/* PRIMERA PANTALLA CON FOTO A PANTALLA COMPLETA */
 .entrada {
+  position: relative;
   min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 28px 20px;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 15% 20%, #ffffffaa, transparent 25%),
-    linear-gradient(145deg, #f9c5e2, #d9b8ff, #ffe5f1);
-  padding: 30px 22px;
+    linear-gradient(
+      135deg,
+      rgba(30, 15, 28, 0.40),
+      rgba(44, 20, 43, 0.58)
+    ),
+    url("file_00000000d07081f7bd7b8b0804c7e7c6.png")
+    center center / cover no-repeat;
+}
+
+/* NOTITA ELEGANTE */
+.nota {
+  width: 100%;
+  max-width: 390px;
+  padding: 30px 23px;
+  background: rgba(255, 249, 247, 0.94);
+  border: 1px solid #d9b5c5;
+  border-radius: 8px;
+  outline: 1px solid rgba(255, 249, 247, 0.65);
+  outline-offset: 5px;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.24);
+  animation: aparecer 1.2s ease;
+}
+
+.nota .sobrelinea {
+  color: #9d7184;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+}
+
+.nota .corazon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.nota h1 {
+  color: #78475c;
+  font-size: clamp(29px, 8vw, 39px);
+  line-height: 1.2;
+  margin: 10px 0 15px;
+  font-weight: normal;
+}
+
+.nota .separador {
+  width: 55px;
+  height: 1px;
+  background: #c49aaa;
+  margin: 18px auto;
+}
+
+.nota .descripcion {
+  color: #745663;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.nota .firma {
+  color: #a36c84;
+  font-size: 13px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .corazon {
@@ -43,24 +125,35 @@ p {
 }
 
 @keyframes latido {
-  50% { transform: scale(1.15); }
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 .boton {
   display: inline-block;
   border: none;
   border-radius: 30px;
-  padding: 15px 25px;
-  background: #c65b9c;
+  padding: 14px 23px;
+  background: #a65779;
   color: white;
-  font-size: 16px;
+  font-family: Georgia, serif;
+  font-size: 15px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 5px 15px #b54d9140;
-  margin-top: 15px;
+  box-shadow: 0 5px 15px #80506a30;
+  margin-top: 17px;
+  transition: transform 0.2s, background 0.2s;
 }
 
-.contenido { display: none; }
+.boton:hover {
+  background: #874361;
+  transform: translateY(-2px);
+}
+
+.contenido {
+  display: none;
+}
 
 .tarjeta {
   max-width: 650px;
@@ -126,24 +219,50 @@ p {
   font-size: 22px;
 }
 
+/* AJUSTES PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 380px) {
+  .nota {
+    padding: 25px 17px;
+  }
+
+  .nota .descripcion {
+    font-size: 14px;
+  }
+
+  .nota h1 {
+    font-size: 29px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- PANTALLA DE ENTRADA: SIN FOTOGRAFÍA DE FONDO -->
+<!-- PANTALLA DE ENTRADA CON FOTO DE FONDO -->
 <section class="entrada" id="entrada">
-  <div class="corazon">💗</div>
-  <p>Hay historias que merecen recordarse...</p>
-  <h1>La nuestra, mi amor</h1>
-  <p>
-    Un pequeño viaje por los recuerdos que hicieron
-    que mi corazón encontrara un lugar especial.
-  </p>
-  <button class="boton" onclick="comenzar()">
-    Descubre nuestra historia 💌
-  </button>
-  <p style="font-size:13px;">Hecho con todo mi amor para ti ♡</p>
+
+  <div class="nota">
+    <p class="sobrelinea">Una historia de dos</p>
+
+    <div class="corazon">♡</div>
+
+    <h1>Dariel &amp; Tokischa</h1>
+
+    <div class="separador"></div>
+
+    <p class="descripcion">
+      Hay historias que merecen recordarse...
+      y personas que llegan para convertirse
+      en un lugar especial en nuestro corazón.
+    </p>
+
+    <button class="boton" onclick="comenzar()">
+      Descubre nuestra historia 💌
+    </button>
+
+    <p class="firma">Hecho con todo mi amor ♡</p>
+  </div>
+
 </section>
 
 <!-- HISTORIA -->
@@ -151,7 +270,9 @@ p {
 
   <section>
     <div class="corazon">🌷</div>
+
     <h1>Bienvenido a nuestra historia</h1>
+
     <p>
       Quiero regalarte un pequeño recorrido por lo nuestro,
       por los momentos que guardo en mi corazón y por
@@ -161,10 +282,11 @@ p {
 
   <div class="linea"></div>
 
-  <!-- PRIMER RECUERDO: FOTO REAL -->
+  <!-- PRIMER RECUERDO -->
   <section>
     <div class="tarjeta">
       <span class="fecha">5 de agosto ❤️</span>
+
       <h2>El día que comenzó algo especial</h2>
 
       <div class="foto">
@@ -253,12 +375,16 @@ p {
   <section>
     <div class="tarjeta">
       <div class="corazon">🎶</div>
+
       <h2>Una canción para nosotros</h2>
+
       <p>
         Hay canciones que dicen lo que a veces el corazón
         no sabe cómo explicar.
       </p>
+
       <p class="frase">Nuestra canción especial 💗</p>
+
       <p style="font-size:14px;">
         Aquí añadiremos la canción de Bruno Mars que quieres dedicarle.
       </p>
@@ -269,6 +395,7 @@ p {
   <section>
     <div class="tarjeta">
       <div class="corazon">💖</div>
+
       <h2>Y esto es solo el comienzo...</h2>
 
       <p>
@@ -300,6 +427,7 @@ p {
     <p>Hecho con amor, para alguien muy especial. 💗</p>
     <p>5 de agosto · El comienzo de nuestra historia</p>
   </footer>
+
 </main>
 
 <div class="flotante">♡ ✨ ♡</div>
