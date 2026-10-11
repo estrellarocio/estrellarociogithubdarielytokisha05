@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -82,21 +81,23 @@ p {
   font-weight: bold;
 }
 
+/* MARCO ELEGANTE PARA LAS FOTOGRAFÍAS */
 .foto {
-  min-height: 230px;
-  border-radius: 18px;
-  margin: 20px 0;
-  background: linear-gradient(135deg, #f7d3eb, #e3d3ff);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed #c99acb;
-  color: #905c91;
-  padding: 20px;
+  max-width: 460px;
+  margin: 25px auto;
+  padding: 9px;
+  background: #fffdfd;
+  border: 1px solid #d8b5cc;
+  border-radius: 5px;
+  box-shadow: 0 7px 20px #80557520;
 }
 
-.foto span { font-size: 43px; }
+.foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
 
 .frase {
   color: #a44b8b;
@@ -124,12 +125,13 @@ p {
   opacity: .6;
   font-size: 22px;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- PANTALLA DE ENTRADA -->
+<!-- PANTALLA DE ENTRADA: SIN FOTOGRAFÍA DE FONDO -->
 <section class="entrada" id="entrada">
   <div class="corazon">💗</div>
   <p>Hay historias que merecen recordarse...</p>
@@ -159,15 +161,17 @@ p {
 
   <div class="linea"></div>
 
-  <!-- PRIMER RECUERDO -->
+  <!-- PRIMER RECUERDO: FOTO REAL -->
   <section>
     <div class="tarjeta">
       <span class="fecha">5 de agosto ❤️</span>
       <h2>El día que comenzó algo especial</h2>
 
       <div class="foto">
-        <span>📸💕</span>
-        <p>Aquí irá nuestra primera foto juntos</p>
+        <img
+          src="file_00000000d07081f7bd7b8b0804c7e7c6.png"
+          alt="Nuestro recuerdo del 5 de agosto"
+        >
       </div>
 
       <p class="frase">
@@ -192,8 +196,10 @@ p {
       <h2>Pequeños momentos, grandes sentimientos 💞</h2>
 
       <div class="foto">
-        <span>🌸📷</span>
-        <p>Aquí irá otra de nuestras fotos</p>
+        <div style="padding:35px 10px;color:#905c91;">
+          <span style="font-size:35px;">🌸📷</span>
+          <p>Aquí irá otra de nuestras fotos</p>
+        </div>
       </div>
 
       <p>
@@ -218,8 +224,10 @@ p {
       <h2>Gracias por llegar a mi vida 🥹💗</h2>
 
       <div class="foto">
-        <span>🫶🏻💜</span>
-        <p>Aquí irá una foto especial de nosotros</p>
+        <div style="padding:35px 10px;color:#905c91;">
+          <span style="font-size:35px;">🫶🏻💜</span>
+          <p>Aquí irá una foto especial de nosotros</p>
+        </div>
       </div>
 
       <p>
