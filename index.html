@@ -2,312 +2,219 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestra historia de amor 💗</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi pequeño mundo de amor ❤️</title>
 
-<style>
-* { box-sizing: border-box; }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  color: #66365f;
-  background: linear-gradient(160deg, #fff0f8, #f1e5ff, #ffe5f0);
-  text-align: center;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #493943;
+      background: linear-gradient(135deg, #f8e9ef, #eee8fa, #fff6f0);
+      text-align: center;
+    }
 
-section { padding: 48px 20px; }
+    .bienvenida {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      background: linear-gradient(145deg, #f7e7ef, #eae5f8);
+    }
 
-h1, h2 { color: #b54d91; }
+    .carta {
+      width: 100%;
+      max-width: 390px;
+      padding: 36px 24px;
+      border: 1px solid rgba(157, 111, 139, .35);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .88);
+      box-shadow: 0 15px 45px rgba(105, 69, 96, .12);
+    }
 
-p {
-  font-size: 17px;
-  line-height: 1.8;
-}
+    .corazon {
+      color: #bd718f;
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
 
-.entrada {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:
-    radial-gradient(circle at 15% 20%, #ffffffaa, transparent 25%),
-    linear-gradient(145deg, #f9c5e2, #d9b8ff, #ffe5f1);
-  padding: 30px 22px;
-}
+    h1 {
+      font-size: 29px;
+      font-weight: normal;
+      margin: 10px 0 16px;
+    }
 
-.corazon {
-  font-size: 65px;
-  animation: latido 1.5s infinite;
-}
+    p {
+      line-height: 1.8;
+      font-size: 16px;
+    }
 
-@keyframes latido {
-  50% { transform: scale(1.15); }
-}
+    button {
+      margin-top: 20px;
+      padding: 13px 24px;
+      border: 1px solid #bd829d;
+      border-radius: 30px;
+      background: #bd829d;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: inherit;
+    }
 
-.boton {
-  display: inline-block;
-  border: none;
-  border-radius: 30px;
-  padding: 15px 25px;
-  background: #c65b9c;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 5px 15px #b54d9140;
-  margin-top: 15px;
-}
+    button:active {
+      transform: scale(.97);
+    }
 
-.contenido { display: none; }
+    .pagina {
+      display: none;
+      padding: 42px 20px 55px;
+      max-width: 650px;
+      margin: auto;
+      animation: aparecer 1s ease;
+    }
 
-.tarjeta {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 25px;
-  background: #ffffffc9;
-  border: 1px solid #f3c8e4;
-  border-radius: 24px;
-  box-shadow: 0 8px 25px #b783b31a;
-}
+    .subtitulo {
+      color: #98758b;
+      letter-spacing: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
 
-.fecha {
-  display: inline-block;
-  padding: 8px 17px;
-  border-radius: 20px;
-  background: #f7d7ec;
-  color: #9c397c;
-  font-weight: bold;
-}
+    .foto-marco {
+      margin: 30px auto;
+      max-width: 440px;
+      padding: 9px;
+      border: 1px solid #c5a2b5;
+      border-radius: 17px;
+      background: rgba(255, 255, 255, .7);
+      box-shadow: 0 12px 35px rgba(92, 62, 82, .14);
+    }
 
-.foto {
-  min-height: 230px;
-  border-radius: 18px;
-  margin: 20px 0;
-  background: linear-gradient(135deg, #f7d3eb, #e3d3ff);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed #c99acb;
-  color: #905c91;
-  padding: 20px;
-}
+    .foto-marco img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
-.foto span { font-size: 43px; }
+    .mensaje {
+      max-width: 480px;
+      margin: 30px auto;
+      padding: 24px;
+      border-top: 1px solid #d8bdcd;
+      border-bottom: 1px solid #d8bdcd;
+      line-height: 1.9;
+      background: rgba(255, 255, 255, .32);
+    }
 
-.frase {
-  color: #a44b8b;
-  font-style: italic;
-  font-size: 20px;
-}
+    .firma {
+      color: #a36e8b;
+      font-style: italic;
+      margin-top: 25px;
+    }
 
-.linea {
-  width: 3px;
-  height: 35px;
-  margin: auto;
-  background: #dba4d3;
-}
+    .decoracion {
+      color: #bd829d;
+      letter-spacing: 8px;
+      margin: 20px 0;
+    }
 
-.pie {
-  padding: 35px 15px;
-  background: #efdafa;
-}
-
-.flotante {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  pointer-events: none;
-  opacity: .6;
-  font-size: 22px;
-}
-</style>
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- PANTALLA DE ENTRADA -->
-<section class="entrada" id="entrada">
-  <div class="corazon">💗</div>
-  <p>Hay historias que merecen recordarse...</p>
-  <h1>La nuestra, mi amor</h1>
-  <p>
-    Un pequeño viaje por los recuerdos que hicieron
-    que mi corazón encontrara un lugar especial.
-  </p>
-  <button class="boton" onclick="comenzar()">
-    Descubre nuestra historia 💌
-  </button>
-  <p style="font-size:13px;">Hecho con todo mi amor para ti ♡</p>
-</section>
-
-<!-- HISTORIA -->
-<main class="contenido" id="historia">
-
-  <section>
-    <div class="corazon">🌷</div>
-    <h1>Bienvenido a nuestra historia</h1>
-    <p>
-      Quiero regalarte un pequeño recorrido por lo nuestro,
-      por los momentos que guardo en mi corazón y por
-      la felicidad de haberte encontrado.
-    </p>
-  </section>
-
-  <div class="linea"></div>
-
-  <!-- PRIMER RECUERDO -->
-  <section>
-    <div class="tarjeta">
-      <span class="fecha">5 de agosto ❤️</span>
-      <h2>El día que comenzó algo especial</h2>
-
-      <div class="foto">
-        <span>📸💕</span>
-        <p>Aquí irá nuestra primera foto juntos</p>
-      </div>
-
-      <p class="frase">
-        El 5 de agosto fue uno de los días más felices
-        de mi vida, porque tuve la dicha de conocerte a ti.
-      </p>
-
+  <section class="bienvenida" id="bienvenida">
+    <div class="carta">
+      <div class="corazon">♡</div>
+      <p class="subtitulo">Tengo algo para ti</p>
+      <h1>Para mi persona favorita</h1>
       <p>
-        Aquel día quizá no imaginaba todo lo bonito que
-        podía llegar a sentir por ti. Pero la vida me estaba
-        regalando la oportunidad de conocer a alguien
-        que terminaría ocupando un lugar enorme en mi corazón.
+        Hay pequeños detalles que guardan
+        sentimientos enormes. Este rinconcito
+        es uno de ellos, y lo hice pensando en ti.
       </p>
-    </div>
-  </section>
-
-  <div class="linea"></div>
-
-  <!-- SEGUNDO RECUERDO -->
-  <section>
-    <div class="tarjeta">
-      <h2>Pequeños momentos, grandes sentimientos 💞</h2>
-
-      <div class="foto">
-        <span>🌸📷</span>
-        <p>Aquí irá otra de nuestras fotos</p>
-      </div>
-
-      <p>
-        No necesito que cada día sea perfecto.
-        Me basta con tener momentos contigo, compartir
-        sonrisas, crear recuerdos y descubrir nuevas razones
-        para quererte cada día un poquito más.
-      </p>
-
-      <p class="frase">
-        Entre tantas personas en el mundo,
-        qué bonito que nuestros caminos se encontraran.
-      </p>
-    </div>
-  </section>
-
-  <div class="linea"></div>
-
-  <!-- TERCER RECUERDO -->
-  <section>
-    <div class="tarjeta">
-      <h2>Gracias por llegar a mi vida 🥹💗</h2>
-
-      <div class="foto">
-        <span>🫶🏻💜</span>
-        <p>Aquí irá una foto especial de nosotros</p>
-      </div>
-
-      <p>
-        Gracias por cada sonrisa, cada palabra bonita,
-        cada instante compartido y por todos esos recuerdos
-        que poco a poco se han convertido en parte de nuestra historia.
-      </p>
-
-      <p>
-        Si algo deseo es que sigamos escribiendo capítulos,
-        aprendiendo el uno del otro y encontrando felicidad
-        en todas esas pequeñas cosas que hacen especial nuestro amor.
-      </p>
-
-      <p class="frase">
-        No sé cuántos recuerdos nos quedan por crear,
-        pero me hace feliz pensar que todavía nos esperan muchos. 💕
-      </p>
-    </div>
-  </section>
-
-  <!-- MÚSICA -->
-  <section>
-    <div class="tarjeta">
-      <div class="corazon">🎶</div>
-      <h2>Una canción para nosotros</h2>
-      <p>
-        Hay canciones que dicen lo que a veces el corazón
-        no sabe cómo explicar.
-      </p>
-      <p class="frase">Nuestra canción especial 💗</p>
-      <p style="font-size:14px;">
-        Aquí añadiremos la canción de Bruno Mars que quieres dedicarle.
-      </p>
-    </div>
-  </section>
-
-  <!-- MENSAJE FINAL -->
-  <section>
-    <div class="tarjeta">
-      <div class="corazon">💖</div>
-      <h2>Y esto es solo el comienzo...</h2>
-
-      <p>
-        Mi amor, gracias por formar parte de mi vida.
-        Si hoy pudiera volver al 5 de agosto, volvería a vivir
-        ese día con una sonrisa, sabiendo que conocería
-        a alguien tan especial para mí.
-      </p>
-
-      <p class="frase">
-        Qué suerte la mía de coincidir contigo.
-        Qué bonito poder llamarte mi amor. 💌
-      </p>
-
-      <p>Con todo mi cariño, para ti. ♡</p>
-
-      <button class="boton" onclick="sorpresa()">
-        Un último mensajito 💌
+      <button onclick="abrirPagina()">
+        Descubre nuestra historia ♡
       </button>
-
-      <p id="secreto" style="display:none;">
-        Si volviera a empezar esta historia,
-        me encantaría volver a encontrarte. ❤️
-      </p>
     </div>
   </section>
 
-  <footer class="pie">
-    <p>Hecho con amor, para alguien muy especial. 💗</p>
-    <p>5 de agosto · El comienzo de nuestra historia</p>
-  </footer>
-</main>
+  <main class="pagina" id="pagina">
+    <p class="subtitulo">Un pequeño rincón de nosotros</p>
 
-<div class="flotante">♡ ✨ ♡</div>
+    <h1>Mi pequeño mundo de amor ❤️</h1>
 
-<script>
-function comenzar() {
-  document.getElementById("entrada").style.display = "none";
-  document.getElementById("historia").style.display = "block";
-  window.scrollTo(0, 0);
-}
+    <div class="decoracion">♡ · ♡ · ♡</div>
 
-function sorpresa() {
-  const mensaje = document.getElementById("secreto");
-  mensaje.style.display = "block";
-}
-</script>
+    <div class="foto-marco">
+      <img src="foto.jpg"
+           alt="Un recuerdo muy especial"
+           onerror="this.style.display='none';
+           document.getElementById('aviso').style.display='block';">
+      <p id="aviso" style="display:none">
+        Aquí irá nuestra foto especial ❤️
+      </p>
+    </div>
+
+    <section class="mensaje">
+      <h2>Un lugar para nosotros</h2>
+      <p>
+        A veces no hacen falta grandes regalos
+        para expresar lo que sentimos.
+        Basta con un pequeño detalle hecho con
+        cariño, pensando en esa persona que
+        consigue hacer nuestros días diferentes.
+      </p>
+
+      <p>
+        Quiero que este pequeño espacio sea
+        un recuerdo de lo bonito que puede ser
+        compartir momentos, sonrisas y sueños
+        con alguien especial.
+      </p>
+
+      <p>
+        Y si tuviera que volver a elegir,
+        me gustaría volver a encontrarte. ❤️
+      </p>
+
+      <div class="firma">
+        Hecho con cariño, especialmente para ti.
+      </div>
+    </section>
+
+    <div class="decoracion">♡ · ♡ · ♡</div>
+  </main>
+
+  <script>
+    function abrirPagina() {
+      document.getElementById('bienvenida').style.display = 'none';
+      document.getElementById('pagina').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+  </script>
 
 </body>
 </html>
