@@ -1,117 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dariel & Tokischa 💗</title>
+<meta name="theme-color" content="#100b18">
+<title>Dariel & Tokischa | Nuestra historia</title>
 
 <style>
+:root {
+  --fondo: #100b18;
+  --panel: #211624;
+  --panel2: #291b2d;
+  --rosa: #e9b5d0;
+  --burdeos: #a65379;
+  --crema: #fff4f7;
+  --texto: #f4e9f1;
+  --suave: #cbb7c9;
+  --borde: rgba(231, 185, 214, .32);
+}
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Georgia, serif;
-  color: #66365f;
-  background: linear-gradient(160deg, #fff0f8, #f1e5ff, #ffe5f0);
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 15%, #402344 0, transparent 40%),
+    radial-gradient(ellipse at 90% 75%, #2d1838 0, transparent 42%),
+    var(--fondo);
+  color: var(--texto);
+  font-family: Georgia, "Times New Roman", serif;
   text-align: center;
+  overflow-x: hidden;
 }
 
-section {
-  padding: 48px 20px;
+button {
+  font: inherit;
 }
 
-h1, h2 {
-  color: #b54d91;
+.estrellas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background-image:
+    radial-gradient(2px 2px at 12% 23%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 31% 72%, #f5cde4 50%, transparent 100%),
+    radial-gradient(2px 2px at 68% 15%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 82% 46%, #f5cde4 50%, transparent 100%),
+    radial-gradient(2px 2px at 54% 86%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 91% 90%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 7% 91%, #f5cde4 50%, transparent 100%);
+  animation: brillar 4s ease-in-out infinite alternate;
 }
 
-p {
-  font-size: 17px;
-  line-height: 1.8;
+@keyframes brillar {
+  from { opacity: .45; }
+  to { opacity: 1; }
 }
 
-/* PRIMERA PANTALLA CON FOTO A PANTALLA COMPLETA */
-.entrada {
-  position: relative;
+.pantalla {
+  display: none;
   min-height: 100vh;
   min-height: 100svh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 35px 18px;
   align-items: center;
-  padding: 28px 20px;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(30, 15, 28, 0.40),
-      rgba(44, 20, 43, 0.58)
-    ),
-    url("file_00000000d07081f7bd7b8b0804c7e7c6.png")
-    center center / cover no-repeat;
+  justify-content: center;
+  flex-direction: column;
+  animation: aparecer .65s ease both;
 }
 
-/* NOTITA ELEGANTE */
-.nota {
-  width: 100%;
-  max-width: 390px;
-  padding: 30px 23px;
-  background: rgba(255, 249, 247, 0.94);
-  border: 1px solid #d9b5c5;
-  border-radius: 8px;
-  outline: 1px solid rgba(255, 249, 247, 0.65);
-  outline-offset: 5px;
-  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.24);
-  animation: aparecer 1.2s ease;
-}
-
-.nota .sobrelinea {
-  color: #9d7184;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0 0 15px;
-}
-
-.nota .corazon {
-  font-size: 35px;
-  margin-bottom: 10px;
-}
-
-.nota h1 {
-  color: #78475c;
-  font-size: clamp(29px, 8vw, 39px);
-  line-height: 1.2;
-  margin: 10px 0 15px;
-  font-weight: normal;
-}
-
-.nota .separador {
-  width: 55px;
-  height: 1px;
-  background: #c49aaa;
-  margin: 18px auto;
-}
-
-.nota .descripcion {
-  color: #745663;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.nota .firma {
-  color: #a36c84;
-  font-size: 13px;
-  margin-top: 20px;
-  letter-spacing: 1px;
+.pantalla.activa {
+  display: flex;
 }
 
 @keyframes aparecer {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -119,118 +93,313 @@ p {
   }
 }
 
-.corazon {
-  font-size: 65px;
-  animation: latido 1.5s infinite;
+h1, h2, h3 {
+  font-weight: normal;
+  line-height: 1.3;
 }
 
-@keyframes latido {
-  50% {
-    transform: scale(1.15);
-  }
+h1 {
+  font-size: clamp(34px, 9vw, 52px);
+  color: var(--crema);
+  margin: 12px 0;
 }
 
-.boton {
-  display: inline-block;
-  border: none;
-  border-radius: 30px;
-  padding: 14px 23px;
-  background: #a65779;
-  color: white;
-  font-family: Georgia, serif;
-  font-size: 15px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 5px 15px #80506a30;
-  margin-top: 17px;
-  transition: transform 0.2s, background 0.2s;
+h2 {
+  color: var(--rosa);
+  font-size: clamp(25px, 6vw, 34px);
+  margin: 10px 0 20px;
 }
 
-.boton:hover {
-  background: #874361;
-  transform: translateY(-2px);
+h3 {
+  color: var(--rosa);
+  font-size: 22px;
+  margin: 15px 0;
 }
 
-.contenido {
-  display: none;
+p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--suave);
+  margin: 12px 0;
+}
+
+.etiqueta {
+  color: var(--rosa);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.advertencia {
+  font-size: 12px;
+  color: #d5bfd1;
+}
+
+/* ENTRADA: FOTO A PANTALLA COMPLETA */
+
+#entrada {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      rgba(12, 7, 17, .43),
+      rgba(12, 7, 17, .65)
+    ),
+    url("file_00000000d07081f7bd7b8b0804c7e7c6.png")
+    center center / cover no-repeat;
+}
+
+.nota {
+  width: 100%;
+  max-width: 390px;
+  padding: 30px 23px;
+  background: rgba(255, 235, 245, .55);
+  border: 1px solid rgba(255, 235, 245, .8);
+  border-radius: 12px;
+  outline: 1px solid rgba(255, 255, 255, .25);
+  outline-offset: 5px;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.nota .etiqueta {
+  color: #6b4057;
+}
+
+.nota h1 {
+  color: #54283f;
+  font-size: clamp(31px, 8vw, 43px);
+}
+
+.nota p {
+  color: #634556;
+}
+
+.nota .corazon {
+  font-size: 34px;
+  color: #8f456b;
+  margin: 8px;
+}
+
+.separador {
+  height: 1px;
+  width: 55px;
+  margin: 20px auto;
+  background: #a76d89;
+}
+
+.firma {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+/* TARJETAS */
+
+.contenedor {
+  width: 100%;
+  max-width: 620px;
+  margin: auto;
 }
 
 .tarjeta {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 25px;
-  background: #ffffffc9;
-  border: 1px solid #f3c8e4;
-  border-radius: 24px;
-  box-shadow: 0 8px 25px #b783b31a;
+  width: 100%;
+  padding: 27px 22px;
+  background: linear-gradient(145deg, #291b2e, #1b1321);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
+}
+
+.tarjeta p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icono {
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 
 .fecha {
   display: inline-block;
-  padding: 8px 17px;
-  border-radius: 20px;
-  background: #f7d7ec;
-  color: #9c397c;
-  font-weight: bold;
+  color: var(--rosa);
+  border: 1px solid var(--borde);
+  border-radius: 30px;
+  padding: 8px 15px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
 }
 
-/* MARCO ELEGANTE PARA LAS FOTOGRAFÍAS */
-.foto {
-  max-width: 460px;
-  margin: 25px auto;
-  padding: 9px;
-  background: #fffdfd;
-  border: 1px solid #d8b5cc;
-  border-radius: 5px;
-  box-shadow: 0 7px 20px #80557520;
+/* FOTOS */
+
+.marco {
+  max-width: 440px;
+  margin: 23px auto;
+  padding: 8px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(231, 185, 214, .6);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
 }
 
-.foto img {
+.marco img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+.foto-pendiente {
+  padding: 35px 12px;
+  color: var(--rosa);
+  border: 1px dashed var(--borde);
+  border-radius: 5px;
 }
 
 .frase {
-  color: #a44b8b;
+  color: var(--rosa);
   font-style: italic;
-  font-size: 20px;
+  font-size: 19px;
+  margin-top: 20px;
 }
 
-.linea {
-  width: 3px;
-  height: 35px;
-  margin: auto;
-  background: #dba4d3;
+/* BOTONES */
+
+.botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+
+.boton {
+  display: inline-block;
+  border: 1px solid rgba(237, 190, 218, .45);
+  border-radius: 30px;
+  padding: 13px 21px;
+  color: #fff7fb;
+  background: linear-gradient(135deg, #a65379, #743b65);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transition: transform .2s, filter .2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.boton.secundario {
+  background: rgba(255, 255, 255, .04);
+  color: var(--rosa);
+  box-shadow: none;
+}
+
+.boton:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+/* PROGRESO */
+
+.progreso {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 25px;
+}
+
+.progreso-texto {
+  color: var(--suave);
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.barra {
+  height: 3px;
+  background: rgba(255, 255, 255, .12);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barra-interior {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, #9c4e79, #f0bfd9);
+  transition: width .4s ease;
+}
+
+/* YOUTUBE */
+
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: #08060b;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* SORPRESA */
+
+.mensaje-secreto {
+  display: none;
+  margin-top: 22px;
+  padding: 22px 16px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(166, 83, 121, .12);
+  animation: aparecer .7s ease;
+}
+
+.mensaje-secreto.visible {
+  display: block;
 }
 
 .pie {
-  padding: 35px 15px;
-  background: #efdafa;
+  font-size: 12px;
+  margin-top: 25px;
+  color: #ad93ac;
 }
 
-.flotante {
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  pointer-events: none;
-  opacity: .6;
-  font-size: 22px;
-}
-
-/* AJUSTES PARA PANTALLAS PEQUEÑAS */
 @media (max-width: 380px) {
-  .nota {
-    padding: 25px 17px;
+  .pantalla {
+    padding: 25px 14px;
   }
 
-  .nota .descripcion {
+  .nota, .tarjeta {
+    padding: 23px 17px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .boton {
+    padding: 12px 17px;
     font-size: 14px;
   }
+}
 
-  .nota h1 {
-    font-size: 29px;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 </style>
@@ -238,58 +407,81 @@ p {
 
 <body>
 
-<!-- PANTALLA DE ENTRADA CON FOTO DE FONDO -->
-<section class="entrada" id="entrada">
+<div class="estrellas" aria-hidden="true"></div>
 
+<!-- ETAPA 1: ENTRADA -->
+<section class="pantalla activa" id="entrada" data-paso="0">
   <div class="nota">
-    <p class="sobrelinea">Una historia de dos</p>
-
+    <p class="etiqueta">Una historia bajo las estrellas</p>
     <div class="corazon">♡</div>
 
     <h1>Dariel &amp; Tokischa</h1>
 
     <div class="separador"></div>
 
-    <p class="descripcion">
-      Hay historias que merecen recordarse...
-      y personas que llegan para convertirse
-      en un lugar especial en nuestro corazón.
+    <p>
+      Hay personas que llegan a nuestra vida
+      y, sin darnos cuenta, se convierten
+      en una historia que queremos conservar.
     </p>
 
-    <button class="boton" onclick="comenzar()">
+    <button class="boton" onclick="irA(1)">
       Descubre nuestra historia 💌
     </button>
 
-    <p class="firma">Hecho con todo mi amor ♡</p>
+    <p class="firma">Una historia de dos · ♡</p>
   </div>
-
 </section>
 
-<!-- HISTORIA -->
-<main class="contenido" id="historia">
+<!-- ETAPA 2: CARTA -->
+<section class="pantalla" id="carta" data-paso="1">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 01 · UNA CARTA PARA TI</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
 
-  <section>
-    <div class="corazon">🌷</div>
+    <div class="tarjeta">
+      <div class="icono">✉️</div>
+      <p class="etiqueta">Para alguien especial</p>
+      <h2>Antes de continuar...</h2>
 
-    <h1>Bienvenido a nuestra historia</h1>
+      <p>
+        Quiero regalarte un pequeño recorrido por lo nuestro,
+        por los momentos que guardo en mi corazón y por
+        la felicidad de haberte encontrado.
+      </p>
 
-    <p>
-      Quiero regalarte un pequeño recorrido por lo nuestro,
-      por los momentos que guardo en mi corazón y por
-      la felicidad de haberte encontrado.
-    </p>
-  </section>
+      <p>
+        No se trata de una historia perfecta, sino de una
+        historia que tiene algo especial: nuestros momentos,
+        nuestras sonrisas y todo lo bonito que todavía
+        nos queda por vivir.
+      </p>
 
-  <div class="linea"></div>
+      <p class="frase">Qué bonito que nuestros caminos se encontraran. ♡</p>
+    </div>
 
-  <!-- PRIMER RECUERDO -->
-  <section>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(0)">← Volver</button>
+      <button class="boton" onclick="irA(2)">Nuestro primer recuerdo →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPA 3: PRIMER RECUERDO -->
+<section class="pantalla" id="recuerdo1" data-paso="2">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 02 · EL COMIENZO</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
+
     <div class="tarjeta">
       <span class="fecha">5 de agosto ❤️</span>
-
       <h2>El día que comenzó algo especial</h2>
 
-      <div class="foto">
+      <div class="marco">
         <img
           src="file_00000000d07081f7bd7b8b0804c7e7c6.png"
           alt="Nuestro recuerdo del 5 de agosto"
@@ -308,19 +500,30 @@ p {
         que terminaría ocupando un lugar enorme en mi corazón.
       </p>
     </div>
-  </section>
 
-  <div class="linea"></div>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(1)">← La carta</button>
+      <button class="boton" onclick="irA(3)">Otro recuerdo →</button>
+    </div>
+  </div>
+</section>
 
-  <!-- SEGUNDO RECUERDO -->
-  <section>
+<!-- ETAPA 4: SEGUNDO RECUERDO -->
+<section class="pantalla" id="recuerdo2" data-paso="3">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 03 · PEQUEÑOS MOMENTOS</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
+
     <div class="tarjeta">
-      <h2>Pequeños momentos, grandes sentimientos 💞</h2>
+      <div class="icono">🌙</div>
+      <h2>Pequeños momentos, grandes sentimientos</h2>
 
-      <div class="foto">
-        <div style="padding:35px 10px;color:#905c91;">
-          <span style="font-size:35px;">🌸📷</span>
-          <p>Aquí irá otra de nuestras fotos</p>
+      <div class="marco">
+        <div class="foto-pendiente">
+          <div style="font-size:35px;">🌸📷</div>
+          <p>Aquí irá otra de nuestras fotos.</p>
         </div>
       </div>
 
@@ -336,19 +539,30 @@ p {
         qué bonito que nuestros caminos se encontraran.
       </p>
     </div>
-  </section>
 
-  <div class="linea"></div>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(2)">← Recuerdo anterior</button>
+      <button class="boton" onclick="irA(4)">Un recuerdo más →</button>
+    </div>
+  </div>
+</section>
 
-  <!-- TERCER RECUERDO -->
-  <section>
+<!-- ETAPA 5: TERCER RECUERDO -->
+<section class="pantalla" id="recuerdo3" data-paso="4">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 04 · GRACIAS POR LLEGAR</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
+
     <div class="tarjeta">
-      <h2>Gracias por llegar a mi vida 🥹💗</h2>
+      <div class="icono">🫶🏻</div>
+      <h2>Gracias por llegar a mi vida</h2>
 
-      <div class="foto">
-        <div style="padding:35px 10px;color:#905c91;">
-          <span style="font-size:35px;">🫶🏻💜</span>
-          <p>Aquí irá una foto especial de nosotros</p>
+      <div class="marco">
+        <div class="foto-pendiente">
+          <div style="font-size:35px;">♡ ✨ ♡</div>
+          <p>Aquí irá una foto especial de nosotros.</p>
         </div>
       </div>
 
@@ -369,33 +583,70 @@ p {
         pero me hace feliz pensar que todavía nos esperan muchos. 💕
       </p>
     </div>
-  </section>
 
-  <!-- MÚSICA -->
-  <section>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(3)">← Recuerdo anterior</button>
+      <button class="boton" onclick="irA(5)">Nuestra canción 🎶</button>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPA 6: CANCIÓN -->
+<section class="pantalla" id="cancion" data-paso="5">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 05 · NUESTRA CANCIÓN</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
+
     <div class="tarjeta">
-      <div class="corazon">🎶</div>
+      <div class="icono">🎶</div>
+      <p class="etiqueta">Una canción para nosotros</p>
+      <h2>Lo arriesgo todo</h2>
+      <p>Bruno Mars</p>
 
-      <h2>Una canción para nosotros</h2>
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/bwuUarZDeyA?rel=0"
+          title="Bruno Mars - Lo Arriesgo Todo"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
 
       <p>
-        Hay canciones que dicen lo que a veces el corazón
-        no sabe cómo explicar.
+        Hay canciones que dicen lo que a veces
+        el corazón no sabe cómo explicar.
+        Esta es nuestra pausa para escuchar,
+        sentir y recordar.
       </p>
 
-      <p class="frase">Nuestra canción especial 💗</p>
-
-      <p style="font-size:14px;">
-        Aquí añadiremos la canción de Bruno Mars que quieres dedicarle.
+      <p class="advertencia">
+        Pulsa reproducir para escucharla. La música no comienza
+        automáticamente.
       </p>
     </div>
-  </section>
 
-  <!-- MENSAJE FINAL -->
-  <section>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(4)">← Recuerdos</button>
+      <button class="boton" onclick="irA(6)">Mi última sorpresa →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPA 7: SORPRESA FINAL -->
+<section class="pantalla" id="final" data-paso="6">
+  <div class="contenedor">
+    <div class="progreso">
+      <div class="progreso-texto">CAPÍTULO 06 · UNA ÚLTIMA SORPRESA</div>
+      <div class="barra"><div class="barra-interior"></div></div>
+    </div>
+
     <div class="tarjeta">
-      <div class="corazon">💖</div>
-
+      <div class="icono">🌌</div>
+      <p class="etiqueta">Bajo el mismo cielo</p>
       <h2>Y esto es solo el comienzo...</h2>
 
       <p>
@@ -410,38 +661,58 @@ p {
         Qué bonito poder llamarte mi amor. 💌
       </p>
 
-      <p>Con todo mi cariño, para ti. ♡</p>
-
-      <button class="boton" onclick="sorpresa()">
-        Un último mensajito 💌
+      <button class="boton" onclick="mostrarSorpresa()">
+        Abrir mi último mensajito 💌
       </button>
 
-      <p id="secreto" style="display:none;">
-        Si volviera a empezar esta historia,
-        me encantaría volver a encontrarte. ❤️
-      </p>
+      <div class="mensaje-secreto" id="secreto">
+        <div class="icono">♡</div>
+        <h3>Para ti, Dariel</h3>
+        <p>
+          Si volviera a empezar esta historia,
+          me encantaría volver a encontrarte. ❤️
+        </p>
+        <p>
+          Gracias por cada recuerdo y por todo lo bonito
+          que todavía nos queda por vivir.
+        </p>
+        <p class="frase">Con todo mi cariño, para ti. ♡</p>
+      </div>
     </div>
-  </section>
 
-  <footer class="pie">
-    <p>Hecho con amor, para alguien muy especial. 💗</p>
-    <p>5 de agosto · El comienzo de nuestra historia</p>
-  </footer>
+    <div class="botones">
+      <button class="boton secundario" onclick="irA(5)">← Escuchar otra vez</button>
+      <button class="boton" onclick="irA(0)">Volver al comienzo ✨</button>
+    </div>
 
-</main>
-
-<div class="flotante">♡ ✨ ♡</div>
+    <p class="pie">Dariel &amp; Tokischa · Nuestra historia bajo las estrellas</p>
+  </div>
+</section>
 
 <script>
-function comenzar() {
-  document.getElementById("entrada").style.display = "none";
-  document.getElementById("historia").style.display = "block";
-  window.scrollTo(0, 0);
+const pantallas = Array.from(document.querySelectorAll(".pantalla"));
+
+function irA(numero) {
+  const destino = pantallas[numero];
+  if (!destino) return;
+
+  pantallas.forEach(pantalla => {
+    pantalla.classList.remove("activa");
+  });
+
+  destino.classList.add("activa");
+
+  const porcentaje = Math.round((numero / 6) * 100);
+  document.querySelectorAll(".barra-interior").forEach(barra => {
+    barra.style.width = Math.max(20, porcentaje) + "%";
+  });
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function sorpresa() {
+function mostrarSorpresa() {
   const mensaje = document.getElementById("secreto");
-  mensaje.style.display = "block";
+  mensaje.classList.add("visible");
 }
 </script>
 
