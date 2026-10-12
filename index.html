@@ -4,402 +4,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100b18">
-<title>Dariel & Tokischa | Nuestra historia</title>
+<meta name="theme-color" content="#111326">
+<title>Dariel & Tokischa ♡</title>
 
 <style>
 :root {
-  --fondo: #100b18;
-  --panel: #211624;
-  --panel2: #291b2d;
-  --rosa: #e9b5d0;
-  --burdeos: #a65379;
-  --crema: #fff4f7;
-  --texto: #f4e9f1;
-  --suave: #cbb7c9;
-  --borde: rgba(231, 185, 214, .32);
+  --noche: #111326;
+  --lavanda: #c9b8ef;
+  --rosa: #e8b9cb;
+  --dorado: #e8d3a0;
+  --texto: #fff8f3;
+  --suave: #d9d3e8;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  min-height: 100vh;
   background:
-    radial-gradient(ellipse at 15% 15%, #402344 0, transparent 40%),
-    radial-gradient(ellipse at 90% 75%, #2d1838 0, transparent 42%),
-    var(--fondo);
+    radial-gradient(ellipse at 10% 15%, #7663a326, transparent 35%),
+    radial-gradient(ellipse at 90% 55%, #b66c9020, transparent 35%),
+    var(--noche);
   color: var(--texto);
   font-family: Georgia, "Times New Roman", serif;
-  text-align: center;
-  overflow-x: hidden;
+  line-height: 1.8;
 }
-
-button {
-  font: inherit;
-}
-
-.estrellas {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-  background-image:
-    radial-gradient(2px 2px at 12% 23%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 31% 72%, #f5cde4 50%, transparent 100%),
-    radial-gradient(2px 2px at 68% 15%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 82% 46%, #f5cde4 50%, transparent 100%),
-    radial-gradient(2px 2px at 54% 86%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 91% 90%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 7% 91%, #f5cde4 50%, transparent 100%);
-  animation: brillar 4s ease-in-out infinite alternate;
-}
-
-@keyframes brillar {
-  from { opacity: .45; }
-  to { opacity: 1; }
-}
-
-.pantalla {
-  display: none;
-  min-height: 100vh;
+.cover {
   min-height: 100svh;
-  padding: 35px 18px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  animation: aparecer .65s ease both;
-}
-
-.pantalla.activa {
-  display: flex;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1, h2, h3 {
-  font-weight: normal;
-  line-height: 1.3;
-}
-
-h1 {
-  font-size: clamp(34px, 9vw, 52px);
-  color: var(--crema);
-  margin: 12px 0;
-}
-
-h2 {
-  color: var(--rosa);
-  font-size: clamp(25px, 6vw, 34px);
-  margin: 10px 0 20px;
-}
-
-h3 {
-  color: var(--rosa);
-  font-size: 22px;
-  margin: 15px 0;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.85;
-  color: var(--suave);
-  margin: 12px 0;
-}
-
-.etiqueta {
-  color: var(--rosa);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-.advertencia {
-  font-size: 12px;
-  color: #d5bfd1;
-}
-
-/* ENTRADA: FOTO A PANTALLA COMPLETA */
-
-#entrada {
+  display: grid;
+  place-items: center;
+  padding: 25px;
   position: relative;
-  isolation: isolate;
   background:
-    linear-gradient(
-      rgba(12, 7, 17, .43),
-      rgba(12, 7, 17, .65)
-    ),
+    linear-gradient(#10122699, #101226bd),
     url("file_00000000d07081f7bd7b8b0804c7e7c6.png")
-    center center / cover no-repeat;
+    center/cover no-repeat;
 }
-
-.nota {
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #e8d3a088;
+  border-radius: 23px;
+  pointer-events: none;
+}
+.panel {
+  max-width: 760px;
   width: 100%;
-  max-width: 390px;
-  padding: 30px 23px;
-  background: rgba(255, 235, 245, .55);
-  border: 1px solid rgba(255, 235, 245, .8);
-  border-radius: 12px;
-  outline: 1px solid rgba(255, 255, 255, .25);
-  outline-offset: 5px;
-  box-shadow: 0 12px 38px rgba(0, 0, 0, .25);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  text-align: center;
+  padding: clamp(25px, 6vw, 55px);
+  border: 1px solid #ffffff40;
+  border-radius: 24px;
+  background: #111326b8;
+  backdrop-filter: blur(9px);
+  box-shadow: 0 20px 65px #0005;
+  animation: aparecer 1s ease both;
 }
-
-.nota .etiqueta {
-  color: #6b4057;
+.kicker {
+  color: var(--dorado);
+  font: 11px Arial, sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
 }
-
-.nota h1 {
-  color: #54283f;
-  font-size: clamp(31px, 8vw, 43px);
+h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: normal;
+  margin: 18px 0;
 }
-
-.nota p {
-  color: #634556;
+h1 span, .firma, .rosa { color: var(--rosa); }
+.cover p {
+  color: #f2edf8;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
-
-.nota .corazon {
-  font-size: 34px;
-  color: #8f456b;
-  margin: 8px;
-}
-
-.separador {
-  height: 1px;
-  width: 55px;
-  margin: 20px auto;
-  background: #a76d89;
-}
-
-.firma {
-  font-size: 13px;
-  letter-spacing: 1px;
-  margin-top: 20px;
-}
-
-/* TARJETAS */
-
-.contenedor {
-  width: 100%;
-  max-width: 620px;
-  margin: auto;
-}
-
-.tarjeta {
-  width: 100%;
-  padding: 27px 22px;
-  background: linear-gradient(145deg, #291b2e, #1b1321);
-  border: 1px solid var(--borde);
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, .24);
-}
-
-.tarjeta p {
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.icono {
-  font-size: 38px;
-  margin-bottom: 10px;
-}
-
-.fecha {
-  display: inline-block;
-  color: var(--rosa);
-  border: 1px solid var(--borde);
-  border-radius: 30px;
-  padding: 8px 15px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  margin-bottom: 14px;
-}
-
-/* FOTOS */
-
-.marco {
-  max-width: 440px;
-  margin: 23px auto;
-  padding: 8px;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid rgba(231, 185, 214, .6);
-  border-radius: 8px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
-}
-
-.marco img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 3px;
-}
-
-.foto-pendiente {
-  padding: 35px 12px;
-  color: var(--rosa);
-  border: 1px dashed var(--borde);
-  border-radius: 5px;
-}
-
-.frase {
-  color: var(--rosa);
-  font-style: italic;
-  font-size: 19px;
-  margin-top: 20px;
-}
-
-/* BOTONES */
-
-.botones {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 27px;
-}
-
 .boton {
   display: inline-block;
-  border: 1px solid rgba(237, 190, 218, .45);
-  border-radius: 30px;
-  padding: 13px 21px;
-  color: #fff7fb;
-  background: linear-gradient(135deg, #a65379, #743b65);
-  box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
-  cursor: pointer;
-  transition: transform .2s, filter .2s;
+  margin-top: 15px;
+  padding: 11px 23px;
+  border: 1px solid #e8d3a0b8;
+  border-radius: 50px;
+  color: var(--texto);
+  background: #c9b8ef20;
+  text-decoration: none;
+  font: 13px Arial, sans-serif;
+  transition: .25s;
 }
-
-.boton:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.12);
-}
-
-.boton.secundario {
-  background: rgba(255, 255, 255, .04);
-  color: var(--rosa);
-  box-shadow: none;
-}
-
-.boton:focus-visible {
-  outline: 2px solid white;
-  outline-offset: 4px;
-}
-
-/* PROGRESO */
-
-.progreso {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto 25px;
-}
-
-.progreso-texto {
+.boton:hover { background: #c9b8ef40; transform: translateY(-2px); }
+.nota {
+  display: block;
+  margin-top: 20px;
+  font: 10px Arial, sans-serif;
+  letter-spacing: .16em;
   color: var(--suave);
-  font-size: 12px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
 }
-
-.barra {
-  height: 3px;
-  background: rgba(255, 255, 255, .12);
-  border-radius: 10px;
+nav {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: .08em;
+  color: var(--suave);
+}
+nav a { color: inherit; text-decoration: none; }
+.intro {
+  max-width: 800px;
+  margin: auto;
+  padding: 85px 24px;
+  text-align: center;
+}
+h2 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 15px 0 25px;
+}
+.intro p, .contenido p, .final p {
+  color: var(--suave);
+}
+.firma { font-size: 1.35rem; font-style: italic; margin-top: 25px; }
+.separador {
+  width: 90px;
+  height: 1px;
+  margin: 0 auto 35px;
+  background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+}
+.recuerdo {
+  width: min(100% - 30px, 1000px);
+  margin: 28px auto;
+  padding: clamp(15px, 3vw, 27px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(20px, 4vw, 45px);
+  border: 1px solid #e8d3a02b;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffffff0b, #c9b8ef0b);
+  box-shadow: 0 15px 40px #0002;
+  animation: subir .8s ease both;
+}
+.recuerdo:nth-of-type(even) .foto { order: 2; }
+.foto {
+  margin: 0;
+  border: 1px solid #e8d3a077;
+  border-radius: 16px;
   overflow: hidden;
+  background: #20213a;
+  aspect-ratio: 4 / 5;
 }
-
-.barra-interior {
+.foto img {
+  display: block;
+  width: 100%;
   height: 100%;
-  width: 20%;
-  background: linear-gradient(90deg, #9c4e79, #f0bfd9);
-  transition: width .4s ease;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform .5s;
 }
-
-/* YOUTUBE */
-
-.video {
-  position: relative;
+.foto img:hover { transform: scale(1.035); }
+.contenido { padding: 8px 2px; }
+.fecha {
+  color: var(--dorado);
+  font: 10px Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+h3 {
+  font-size: clamp(1.65rem, 4vw, 2.45rem);
+  line-height: 1.25;
+  font-weight: normal;
+  margin: 0 0 20px;
+}
+.contenido p { font-size: 1rem; }
+.contenido em { color: var(--rosa); }
+.musica {
+  max-width: 850px;
+  margin: 75px auto;
+  padding: clamp(22px, 5vw, 42px);
+  width: calc(100% - 30px);
+  text-align: center;
+  border: 1px solid #c9b8ef55;
+  border-radius: 24px;
+  background: #c9b8ef0d;
+}
+.musica p { color: var(--suave); }
+.reproductor {
+  max-width: 560px;
+  margin: 25px auto 0;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid #e8d3a055;
+}
+.reproductor iframe {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  margin: 20px auto;
-  overflow: hidden;
-  border: 1px solid var(--borde);
-  border-radius: 10px;
-  background: #08060b;
-}
-
-.video iframe {
-  width: 100%;
-  height: 100%;
   border: 0;
 }
-
-/* SORPRESA */
-
-.mensaje-secreto {
+.final {
+  max-width: 1000px;
+  width: calc(100% - 30px);
+  margin: 70px auto 45px;
+  padding: clamp(16px, 3vw, 27px);
+  border: 1px solid #e8d3a055;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #e8b9cb12, #c9b8ef12);
+}
+.final-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: center;
+  gap: clamp(22px, 5vw, 45px);
+}
+.final .foto { aspect-ratio: 4 / 5; }
+.ultima { color: var(--texto) !important; font-size: 1.2rem; }
+footer {
+  padding: 40px 20px 55px;
+  text-align: center;
+  color: var(--suave);
+}
+footer .nombres {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--rosa);
+}
+.estrellas { color: var(--dorado); letter-spacing: .6em; }
+.lightbox {
   display: none;
-  margin-top: 22px;
-  padding: 22px 16px;
-  border: 1px solid var(--borde);
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background: #050610ed;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lightbox.abierto { display: flex; }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 88svh;
+  object-fit: contain;
   border-radius: 12px;
-  background: rgba(166, 83, 121, .12);
-  animation: aparecer .7s ease;
 }
-
-.mensaje-secreto.visible {
-  display: block;
+.cerrar {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  color: white;
+  background: #ffffff18;
+  border: 1px solid #ffffff66;
+  border-radius: 50%;
+  font-size: 25px;
+  cursor: pointer;
 }
-
-.pie {
-  font-size: 12px;
-  margin-top: 25px;
-  color: #ad93ac;
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
-@media (max-width: 380px) {
-  .pantalla {
-    padding: 25px 14px;
-  }
-
-  .nota, .tarjeta {
-    padding: 23px 17px;
-  }
-
-  p {
-    font-size: 15px;
-  }
-
-  .boton {
-    padding: 12px 17px;
-    font-size: 14px;
-  }
+@keyframes subir {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
+@media (max-width: 720px) {
+  .recuerdo, .final-grid { grid-template-columns: 1fr; gap: 22px; }
+  .recuerdo:nth-of-type(even) .foto { order: 0; }
+  .foto, .final .foto { aspect-ratio: 4 / 4.5; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
+    animation: none !important;
     scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
 </style>
@@ -407,313 +286,158 @@ p {
 
 <body>
 
-<div class="estrellas" aria-hidden="true"></div>
+<header class="cover" id="inicio">
+  <div class="panel">
+    <div class="kicker">Un pequeño lugar para nosotros</div>
+    <h1>Dariel <span>&amp;</span><br>Tokischa</h1>
+    <p>Esta no es solamente una página con fotos y palabras bonitas. Es un lugar donde siento que puedo expresar todo eso que a veces no sé cómo decirte. Porque, sinceramente, no sé en qué momento empezaste a ser tan importante para mí. Solo sé que hoy, cuando pienso en mis momentos más bonitos, tú estás presente en la mayoría de ellos.</p>
+    <a class="boton" href="#bienvenida">Descubre nuestra historia ♡</a>
+    <span class="nota">HECHA CON AMOR, PARA TI</span>
+  </div>
+</header>
 
-<!-- ETAPA 1: ENTRADA -->
-<section class="pantalla activa" id="entrada" data-paso="0">
-  <div class="nota">
-    <p class="etiqueta">Una historia bajo las estrellas</p>
-    <div class="corazon">♡</div>
+<nav>
+  <a href="#inicio">Dariel &amp; Tokischa</a>
+  <a href="#bienvenida">Nuestro rincón ♡</a>
+</nav>
 
-    <h1>Dariel &amp; Tokischa</h1>
+<main>
+<section class="intro" id="bienvenida">
+  <div class="kicker">Para ti, mi amor</div>
+  <h2>Ven, quiero mostrarte algo…</h2>
+  <p>Quiero que entres en esta pequeña página y que te pasees un poquito por los sentimientos que tengo por ti, por esos momentos que guardo en mi corazón y por la felicidad tan bonita que siento de haberte encontrado.</p>
+  <p>Quiero que aquí encuentres un pedacito de nosotros: nuestros momentos, nuestras sonrisas, nuestras locuras, nuestro toque sensual y todas esas pequeñas cosas que hacen que lo nuestro sea tan especial.</p>
+  <p>Porque, si algo tengo claro, es que todo para mí contigo tiene algo maravilloso. Hasta las cosas más sencillas se vuelven especiales cuando se trata de ti.</p>
+  <p>Así que ven, mi amor… esta pequeña parte de mi mundo también es para ti. ❤️‍🔥</p>
+  <div class="firma">Con todo mi cariño, para ti.</div>
+</section>
+<div class="separador"></div>
 
-    <div class="separador"></div>
-
-    <p>
-      Hay personas que llegan a nuestra vida
-      y, sin darnos cuenta, se convierten
-      en una historia que queremos conservar.
-    </p>
-
-    <button class="boton" onclick="irA(1)">
-      Descubre nuestra historia 💌
-    </button>
-
-    <p class="firma">Una historia de dos · ♡</p>
+<section class="recuerdo">
+  <figure class="foto"><img src="IMG-20261011-WA0031.jpg" alt="Nuestro recuerdo junto al lago" data-ampliar></figure>
+  <div class="contenido">
+    <div class="fecha">05 de agosto · El lago</div>
+    <h3>Quizá el destino tenía otros planes…</h3>
+    <p>Aquel 5 de agosto, en un lago, la vida nos regaló un reencuentro que jamás imaginé que llegaría a significar tanto para mí. Volvimos a coincidir, sin que yo pudiera imaginar todo lo que ese momento terminaría despertando en mi corazón.</p>
+    <p>Si alguien me hubiera dicho ese día que llegarías a ser tan importante para mí, que terminaría guardando tantos sentimientos por ti y que tu presencia ocuparía un lugar tan bonito en mi vida, probablemente no lo habría imaginado.</p>
+    <p>Y, sin embargo, aquí estoy, mirando aquel recuerdo y pensando en lo curioso que es el destino. A veces nos vuelve a cruzar con alguien sin avisarnos de que ese reencuentro puede convertirse en el comienzo de algo que jamás supimos que necesitábamos.</p>
+    <p>No sé cómo explicarte todo lo que siento por ti. Es algo que va más allá de las palabras, algo tan profundo que incluso cuando intento describirlo siento que me quedo corta. Quizá la palabra sea <em>inconmensurable</em>: eso que se siente con tanta intensidad que ningún conjunto de palabras parece suficiente para explicarlo.</p>
+    <p>Y pensar que todo comenzó con un reencuentro junto a un lago… Qué bonito que la vida nos volviera a encontrar. ❤️‍🩹</p>
   </div>
 </section>
 
-<!-- ETAPA 2: CARTA -->
-<section class="pantalla" id="carta" data-paso="1">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 01 · UNA CARTA PARA TI</div>
-      <div class="barra"><div class="barra-interior"></div></div>
-    </div>
-
-    <div class="tarjeta">
-      <div class="icono">✉️</div>
-      <p class="etiqueta">Para alguien especial</p>
-      <h2>Antes de continuar...</h2>
-
-      <p>
-        Quiero regalarte un pequeño recorrido por lo nuestro,
-        por los momentos que guardo en mi corazón y por
-        la felicidad de haberte encontrado.
-      </p>
-
-      <p>
-        No se trata de una historia perfecta, sino de una
-        historia que tiene algo especial: nuestros momentos,
-        nuestras sonrisas y todo lo bonito que todavía
-        nos queda por vivir.
-      </p>
-
-      <p class="frase">Qué bonito que nuestros caminos se encontraran. ♡</p>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(0)">← Volver</button>
-      <button class="boton" onclick="irA(2)">Nuestro primer recuerdo →</button>
-    </div>
+<section class="recuerdo">
+  <figure class="foto"><img src="IMG-20261011-WA0032.jpg" alt="Un recuerdo de nosotros" data-ampliar></figure>
+  <div class="contenido">
+    <div class="fecha">Un recuerdo nuestro · Solo tú y yo</div>
+    <h3>Y descubrí que aún me faltaba mucho por conocer de ti…</h3>
+    <p>Ese día descubrimos que todavía había muchas cosas del otro que no conocíamos, facetas que aún no habíamos tenido la oportunidad de descubrir y pequeños detalles que terminaron sorprendiéndonos de la mejor manera.</p>
+    <p>Fue bonito conocer un poquito más de ti, descubrir esas partes de tu personalidad que todavía no había visto y encontrarme con detalles que me encantaron. Pero lo más curioso fue descubrir que, detrás de todo lo que ya conocía de ti, había mucho más por explorar.</p>
+    <p>Y bueno… 🤭 digamos que algunas de esas facetas no solo despertaron mi curiosidad, sino también mi lado más travieso. Porque una cosa es conocerte, otra es descubrir tus locuras y otra muy distinta es encontrar esa complicidad entre nosotros que hace que una simple mirada, una sonrisa o un pequeño acercamiento puedan decir muchísimo sin necesidad de hablar.</p>
+    <p>Me encantó descubrir esa versión de ti que quizá no todos conocen, esa que aparece cuando estamos en nuestro propio mundo, cuando dejamos de pensar tanto y simplemente disfrutamos de estar juntos. Fue maravilloso descubrir que entre nosotros podía existir ternura, diversión, confianza y también esa chispa que hace que todo se sienta un poquito más intenso. ❤️‍🔥</p>
+    <p>Y si algo aprendí ese día, es que todavía me quedaban muchísimas cosas por descubrir de ti… y créeme, mi amor, pienso disfrutar de cada una de ellas. 😘💋</p>
   </div>
 </section>
 
-<!-- ETAPA 3: PRIMER RECUERDO -->
-<section class="pantalla" id="recuerdo1" data-paso="2">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 02 · EL COMIENZO</div>
-      <div class="barra"><div class="barra-interior"></div></div>
-    </div>
-
-    <div class="tarjeta">
-      <span class="fecha">5 de agosto ❤️</span>
-      <h2>El día que comenzó algo especial</h2>
-
-      <div class="marco">
-        <img
-          src="file_00000000d07081f7bd7b8b0804c7e7c6.png"
-          alt="Nuestro recuerdo del 5 de agosto"
-        >
-      </div>
-
-      <p class="frase">
-        El 5 de agosto fue uno de los días más felices
-        de mi vida, porque tuve la dicha de conocerte a ti.
-      </p>
-
-      <p>
-        Aquel día quizá no imaginaba todo lo bonito que
-        podía llegar a sentir por ti. Pero la vida me estaba
-        regalando la oportunidad de conocer a alguien
-        que terminaría ocupando un lugar enorme en mi corazón.
-      </p>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(1)">← La carta</button>
-      <button class="boton" onclick="irA(3)">Otro recuerdo →</button>
-    </div>
+<section class="recuerdo">
+  <figure class="foto"><img src="IMG-20261011-WA0030.jpg" alt="Nuestro primer aniversario" data-ampliar></figure>
+  <div class="contenido">
+    <div class="fecha">Nuestro primer aniversario</div>
+    <h3>Y ese día, nuestros corazones hablaron a través de la música… 🎶❤️‍🔥</h3>
+    <p>Nuestro primer aniversario fue uno de esos momentos que quisiera guardar para siempre. Yo te dediqué unas palabras desde el corazón y tú me regalaste algo igual de especial: tu música. 🥹❤️</p>
+    <p>No sé si alguna vez lograrás comprender lo bonito que fue para mí escucharte, saber que aquellas palabras y melodías nacían de ti y que, en ese instante, estabas compartiendo conmigo algo tan personal. Porque hay regalos que no necesitan envoltura, y escuchar a la persona que amas expresarte sus sentimientos a través de su propia voz es uno de esos detalles que se sienten mucho más de lo que se pueden explicar.</p>
+    <p>Y si algo guardaré siempre de aquel día, será la felicidad de haberlo vivido contigo. 💗🎶</p>
   </div>
 </section>
 
-<!-- ETAPA 4: SEGUNDO RECUERDO -->
-<section class="pantalla" id="recuerdo2" data-paso="3">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 03 · PEQUEÑOS MOMENTOS</div>
-      <div class="barra"><div class="barra-interior"></div></div>
-    </div>
-
-    <div class="tarjeta">
-      <div class="icono">🌙</div>
-      <h2>Pequeños momentos, grandes sentimientos</h2>
-
-      <div class="marco">
-        <div class="foto-pendiente">
-          <div style="font-size:35px;">🌸📷</div>
-          <p>Aquí irá otra de nuestras fotos.</p>
-        </div>
-      </div>
-
-      <p>
-        No necesito que cada día sea perfecto.
-        Me basta con tener momentos contigo, compartir
-        sonrisas, crear recuerdos y descubrir nuevas razones
-        para quererte cada día un poquito más.
-      </p>
-
-      <p class="frase">
-        Entre tantas personas en el mundo,
-        qué bonito que nuestros caminos se encontraran.
-      </p>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(2)">← Recuerdo anterior</button>
-      <button class="boton" onclick="irA(4)">Un recuerdo más →</button>
-    </div>
+<section class="recuerdo">
+  <figure class="foto"><img src="IMG-20261011-WA0029(1).jpg" alt="El día que conociste a nuestro hijo" data-ampliar></figure>
+  <div class="contenido">
+    <div class="fecha">Un día que guardo en el corazón</div>
+    <h3>Y sin darme cuenta, me enamoré un poquito más de ti… ❤️‍🔥</h3>
+    <p>Aquel día fue muy especial para mí. Verte conocer a nuestro hijo y comprobar lo bien que se llevaron fue algo que guardé con muchísimo cariño en mi corazón. 🥹❤️</p>
+    <p>Y después llegó nuestro momento, ese en el que parecía que el mundo podía esperar. Solo estábamos tú y yo, la música de fondo, tu voz cantándome y nosotros bailando, compartiendo una felicidad tan bonita que no necesitaba nada más.</p>
+    <p>Mientras te escuchaba y me perdía en tus ojos, sentía que mi corazón volvía a elegirte, pero esta vez con más fuerza. Y así, entre canciones, bailes y pequeños instantes, terminé enamorándome todavía más de ti… hasta sentir que me estaba perdiendo por completo en ese amor tan bonito que estaba naciendo dentro de mí. ❤️‍🩹🎶</p>
   </div>
 </section>
 
-<!-- ETAPA 5: TERCER RECUERDO -->
-<section class="pantalla" id="recuerdo3" data-paso="4">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 04 · GRACIAS POR LLEGAR</div>
-      <div class="barra"><div class="barra-interior"></div></div>
-    </div>
-
-    <div class="tarjeta">
-      <div class="icono">🫶🏻</div>
-      <h2>Gracias por llegar a mi vida</h2>
-
-      <div class="marco">
-        <div class="foto-pendiente">
-          <div style="font-size:35px;">♡ ✨ ♡</div>
-          <p>Aquí irá una foto especial de nosotros.</p>
-        </div>
-      </div>
-
-      <p>
-        Gracias por cada sonrisa, cada palabra bonita,
-        cada instante compartido y por todos esos recuerdos
-        que poco a poco se han convertido en parte de nuestra historia.
-      </p>
-
-      <p>
-        Si algo deseo es que sigamos escribiendo capítulos,
-        aprendiendo el uno del otro y encontrando felicidad
-        en todas esas pequeñas cosas que hacen especial nuestro amor.
-      </p>
-
-      <p class="frase">
-        No sé cuántos recuerdos nos quedan por crear,
-        pero me hace feliz pensar que todavía nos esperan muchos. 💕
-      </p>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(3)">← Recuerdo anterior</button>
-      <button class="boton" onclick="irA(5)">Nuestra canción 🎶</button>
-    </div>
+<section class="recuerdo">
+  <figure class="foto"><img src="IMG-20261011-WA0033.jpg" alt="Nuestras locuras durante las vacaciones" data-ampliar></figure>
+  <div class="contenido">
+    <div class="fecha">Vacaciones · Nuestras locuras</div>
+    <h3>Contigo, hasta las locuras tienen otro sabor… 🤭❤️‍🔥</h3>
+    <p>Estábamos de vacaciones, sin tantas preocupaciones y con tiempo para dedicarnos a lo que más nos gustaba: disfrutar juntos, hacer nuestras locuras y dejarnos llevar por el momento.</p>
+    <p>Porque tú y yo, mi amor, tenemos una manera muy nuestra de convertir cualquier día en una aventura. Entre risas, ocurrencias y esa complicidad que compartimos, terminamos creando recuerdos que van mucho más allá de una simple fotografía. 😏💋</p>
+    <p>Y es que contigo me encanta esa libertad de poder ser yo misma, sacar mi lado más alocado, molestarte, provocarte una que otra sonrisa y disfrutar de esa química tan nuestra que, a veces, ni siquiera necesita palabras. 🤭❤️‍🔥</p>
+    <p>Si algo quiero seguir haciendo contigo, es coleccionar días así: espontáneos, divertidos, llenos de cariño y con alguna que otra locura que mejor dejamos entre nosotros. Porque, mi amor, contigo hasta portarme mal puede convertirse en uno de mis pasatiempos favoritos. JAJAJA. 😈💗</p>
   </div>
 </section>
 
-<!-- ETAPA 6: CANCIÓN -->
-<section class="pantalla" id="cancion" data-paso="5">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 05 · NUESTRA CANCIÓN</div>
-      <div class="barra"><div class="barra-interior"></div></div>
-    </div>
-
-    <div class="tarjeta">
-      <div class="icono">🎶</div>
-      <p class="etiqueta">Una canción para nosotros</p>
-      <h2>Lo arriesgo todo</h2>
-      <p>Bruno Mars</p>
-
-      <div class="video">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/bwuUarZDeyA?rel=0"
-          title="Bruno Mars - Lo Arriesgo Todo"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <p>
-        Hay canciones que dicen lo que a veces
-        el corazón no sabe cómo explicar.
-        Esta es nuestra pausa para escuchar,
-        sentir y recordar.
-      </p>
-
-      <p class="advertencia">
-        Pulsa reproducir para escucharla. La música no comienza
-        automáticamente.
-      </p>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(4)">← Recuerdos</button>
-      <button class="boton" onclick="irA(6)">Mi última sorpresa →</button>
-    </div>
+<section class="musica" id="musica">
+  <div class="kicker">Una canción para nosotros</div>
+  <h2>Que la música diga lo que siento… 🎧</h2>
+  <p>Hay canciones que, de alguna manera, terminan teniendo un significado especial cuando las compartimos con alguien.</p>
+  <div class="reproductor">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/bwuUarZDeyA?rel=0"
+      title="Bruno Mars — Lo Arriesgo Todo"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
   </div>
 </section>
 
-<!-- ETAPA 7: SORPRESA FINAL -->
-<section class="pantalla" id="final" data-paso="6">
-  <div class="contenedor">
-    <div class="progreso">
-      <div class="progreso-texto">CAPÍTULO 06 · UNA ÚLTIMA SORPRESA</div>
-      <div class="barra"><div class="barra-interior"></div></div>
+<section class="final" id="final">
+  <div class="final-grid">
+    <figure class="foto"><img src="IMG-20261011-WA0035.jpg" alt="Nuestro último recuerdo" data-ampliar></figure>
+    <div>
+      <div class="kicker">Una última cosita, mi amor</div>
+      <h3>Y si algo quiero que nunca olvides… ❤️</h3>
+      <p>Quiero que sepas que te amo más de lo que a veces consigo demostrarte y que tu presencia en mi vida se ha vuelto muchísimo más importante de lo que alguna vez imaginé. No sé qué nos deparará el futuro, mi amor, pero sí sé que hoy me hace feliz compartir mi mundo contigo y que, entre tantas personas, mi corazón tiene un lugar muy especial reservado para ti.</p>
+      <p class="ultima">Te amo, Dariel. ❤️‍🩹</p>
     </div>
-
-    <div class="tarjeta">
-      <div class="icono">🌌</div>
-      <p class="etiqueta">Bajo el mismo cielo</p>
-      <h2>Y esto es solo el comienzo...</h2>
-
-      <p>
-        Mi amor, gracias por formar parte de mi vida.
-        Si hoy pudiera volver al 5 de agosto, volvería a vivir
-        ese día con una sonrisa, sabiendo que conocería
-        a alguien tan especial para mí.
-      </p>
-
-      <p class="frase">
-        Qué suerte la mía de coincidir contigo.
-        Qué bonito poder llamarte mi amor. 💌
-      </p>
-
-      <button class="boton" onclick="mostrarSorpresa()">
-        Abrir mi último mensajito 💌
-      </button>
-
-      <div class="mensaje-secreto" id="secreto">
-        <div class="icono">♡</div>
-        <h3>Para ti, Dariel</h3>
-        <p>
-          Si volviera a empezar esta historia,
-          me encantaría volver a encontrarte. ❤️
-        </p>
-        <p>
-          Gracias por cada recuerdo y por todo lo bonito
-          que todavía nos queda por vivir.
-        </p>
-        <p class="frase">Con todo mi cariño, para ti. ♡</p>
-      </div>
-    </div>
-
-    <div class="botones">
-      <button class="boton secundario" onclick="irA(5)">← Escuchar otra vez</button>
-      <button class="boton" onclick="irA(0)">Volver al comienzo ✨</button>
-    </div>
-
-    <p class="pie">Dariel &amp; Tokischa · Nuestra historia bajo las estrellas</p>
   </div>
 </section>
+</main>
+
+<footer>
+  <div class="estrellas">✦ ✧ ✦</div>
+  <div class="nombres">Dariel &amp; Tokischa</div>
+  <p>Un pedacito de mi mundo, para ti. ♡</p>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="cerrar" id="cerrar" aria-label="Cerrar foto">×</button>
+  <img src="" alt="Foto ampliada" id="foto-grande">
+</div>
 
 <script>
-const pantallas = Array.from(document.querySelectorAll(".pantalla"));
+const caja = document.getElementById("lightbox");
+const grande = document.getElementById("foto-grande");
 
-function irA(numero) {
-  const destino = pantallas[numero];
-  if (!destino) return;
-
-  pantallas.forEach(pantalla => {
-    pantalla.classList.remove("activa");
+document.querySelectorAll("[data-ampliar]").forEach((foto) => {
+  foto.addEventListener("click", () => {
+    grande.src = foto.src;
+    grande.alt = foto.alt;
+    caja.classList.add("abierto");
+    document.body.style.overflow = "hidden";
   });
+});
 
-  destino.classList.add("activa");
-
-  const porcentaje = Math.round((numero / 6) * 100);
-  document.querySelectorAll(".barra-interior").forEach(barra => {
-    barra.style.width = Math.max(20, porcentaje) + "%";
-  });
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function cerrarFoto() {
+  caja.classList.remove("abierto");
+  grande.src = "";
+  document.body.style.overflow = "";
 }
 
-function mostrarSorpresa() {
-  const mensaje = document.getElementById("secreto");
-  mensaje.classList.add("visible");
-}
+document.getElementById("cerrar").addEventListener("click", cerrarFoto);
+caja.addEventListener("click", (evento) => {
+  if (evento.target === caja) cerrarFoto();
+});
+document.addEventListener("keydown", (evento) => {
+  if (evento.key === "Escape") cerrarFoto();
+});
 </script>
 
 </body>
